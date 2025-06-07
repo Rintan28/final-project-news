@@ -58,10 +58,12 @@ pipeline {
                 echo "Deploying to Kubernetes in namespace ${KUBE_NAMESPACE}..."
                 // Menggunakan 'kubectl apply' untuk menerapkan atau memperbarui semua resource
                 // dari file-file .yaml. Ini mendukung deployment tanpa downtime (rolling updates).
-                sh "kubectl apply -f deployment.yaml -n ${KUBE_NAMESPACE} --validate=false"
-                sh "kubectl apply -f service.yaml -n ${KUBE_NAMESPACE} --validate=false"
-                sh "kubectl apply -f ingress.yaml -n ${KUBE_NAMESPACE} --validate=false"
-                
+                withCredentials([file(credentialsId: 'kubeconfig-final-project', variable: 'KUBECONFIG')]) {
+                    sh "kubectl apply -f deployment.yaml -n ${KUBE_NAMESPACE} --validate=false"
+                    sh "kubectl apply -f service.yaml -n ${KUBE_NAMESPACE} --validate=false"
+                    sh "kubectl apply -f ingress.yaml -n ${KUBE_NAMESPACE} --validate=false"
+                }
+                    
                 echo "Deployment successful!"
             }
         }
