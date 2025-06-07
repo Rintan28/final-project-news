@@ -1,0 +1,24 @@
+# ingress.yaml
+# Mengatur bagaimana traffic dari luar bisa masuk ke cluster dan diarahkan ke Service yang tepat.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: news-website-ingress
+  annotations:
+    # Anotasi ini spesifik untuk NGINX Ingress Controller
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  # Aturan routing berdasarkan nama host (domain)
+  - host: "berita.local" # Domain yang akan digunakan untuk mengakses web
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          # Arahkan traffic ke Service yang telah kita buat
+          service:
+            name: news-website-service
+            port:
+              # Port Service yang dituju
+              number: 80

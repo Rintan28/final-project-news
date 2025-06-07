@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KlikBerita - Portal Berita Cepat & Andal</title>
+    <!-- Memuat Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-red-600">BreakingNews</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="text-gray-600 hover:text-red-600 transition duration-300">Nasional</a>
+                <a href="#" class="text-gray-600 hover:text-red-600 transition duration-300">Internasional</a>
+                <a href="#" class="text-gray-600 hover:text-red-600 transition duration-300">Teknologi</a>
+                <a href="#" class="text-gray-600 hover:text-red-600 transition duration-300">Olahraga</a>
+                <a href="#" class="text-gray-600 hover:text-red-600 transition duration-300">Ekonomi</a>
+            </div>
+            <button class="md:hidden text-gray-600 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="container mx-auto px-6 py-8">
+        
+        <!-- Berita Utama (Hero Section) -->
+        <section class="mb-8">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="https://placehold.co/1200x600/e02424/white?text=Berita+Viral" alt="Gambar Berita Utama" class="w-full h-auto object-cover">
+                <div class="p-6">
+                    <span class="text-sm text-red-600 font-semibold">BERITA UTAMA</span>
+                    <h1 class="text-3xl md:text-4xl font-bold mt-2 mb-4 leading-tight">Pemerintah Umumkan Kebijakan Baru Terkait Teknologi Cloud</h1>
+                    <p class="text-gray-600 leading-relaxed">Kebijakan ini diharapkan dapat mempercepat adopsi teknologi digital di seluruh sektor industri dan pemerintahan, dengan fokus pada keamanan data dan kedaulatan digital.</p>
+                    <a href="#" class="inline-block mt-4 text-red-600 font-semibold hover:underline">Baca Selengkapnya &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daftar Berita Terkini -->
+        <section>
+            <h2 class="text-2xl font-bold mb-6">Berita Terkini</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Kartu Berita 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                    <img src="https://placehold.co/600x400/333/white?text=Teknologi" alt="Gambar Berita 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Startup Lokal Raih Pendanaan Seri B Sebesar $50 Juta</h3>
+                        <p class="text-gray-700 text-base">Pendanaan ini akan digunakan untuk ekspansi pasar di Asia Tenggara dan pengembangan produk AI.</p>
+                        <span class="text-xs text-gray-500 mt-4 block">1 jam yang lalu</span>
+                    </div>
+                </div>
+
+                <!-- Kartu Berita 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                    <img src="https://placehold.co/600x400/f59e0b/white?text=Olahraga" alt="Gambar Berita 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Timnas U-23 Lolos ke Babak Final Piala Asia</h3>
+                        <p class="text-gray-700 text-base">Kemenangan dramatis atas lawan di semifinal memastikan langkah timnas menuju perebutan gelar juara.</p>
+                        <span class="text-xs text-gray-500 mt-4 block">3 jam yang lalu</span>
+                    </div>
+                </div>
+
+                <!-- Kartu Berita 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                    <img src="https://placehold.co/600x400/10b981/white?text=Ekonomi" alt="Gambar Berita 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Inflasi Bulan Ini Terkendali, BI Pertahankan Suku Bunga</h3>
+                        <p class="text-gray-700 text-base">Bank sentral memutuskan untuk mempertahankan suku bunga acuan di level saat ini untuk menjaga stabilitas ekonomi.</p>
+                        <span class="text-xs text-gray-500 mt-4 block">5 jam yang lalu</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-8 py-6 border-t">
+        <div class="container mx-auto px-6 text-center text-gray-600">
+            <p>&copy; 2025 KlikBerita. Kelompok 3 SIB Mandiri DevOps NFA.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

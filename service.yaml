@@ -1,0 +1,19 @@
+# service.yaml
+# Membuat sebuah endpoint jaringan internal yang stabil untuk mengakses Pod-Pod kita.
+apiVersion: v1
+kind: Service
+metadata:
+  # Nama dari Service
+  name: news-website-service
+spec:
+  # Tipe Service. ClusterIP hanya bisa diakses dari dalam cluster.
+  type: ClusterIP
+  # Selector ini akan mencari Pod dengan label 'app: news-website' untuk diarahkan traffic.
+  selector:
+    app: news-website
+  ports:
+  - protocol: TCP
+    # Port pada Service itu sendiri
+    port: 80
+    # Port pada container (Pod) yang akan dituju
+    targetPort: 80

@@ -1,0 +1,39 @@
+# deployment.yaml
+# Mendefinisikan state yang diinginkan untuk aplikasi kita di Kubernetes.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # Nama dari Deployment
+  name: news-website-deployment
+  # Label untuk Deployment ini
+  labels:
+    app: news-website
+spec:
+  # Jumlah Pod yang ingin kita jalankan. 3 replika untuk high availability.
+  replicas: 3
+  # Strategi update. RollingUpdate memastikan tidak ada downtime saat pembaruan.
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1 # Maksimal 1 Pod tidak tersedia selama update
+      maxSurge: 1       # Maksimal 1 Pod tambahan dibuat selama update
+  # Selector untuk menemukan Pod mana yang akan dikelola oleh Deployment ini.
+  selector:
+    matchLabels:
+      app: news-website
+  # Template untuk membuat Pod baru.
+  template:
+    metadata:
+      # Label untuk Pod, harus cocok dengan selector di atas.
+      labels:
+        app: news-website
+    spec:
+      containers:
+      - name: news-website-container
+        # Image yang akan digunakan. GANTI dengan nama image Anda.
+        # Menggunakan tag 'latest' agar selalu mengambil versi terbaru yang di-push oleh Jenkins.
+        image: yourdockerhubusername/news-website:latest
+        # Kebijakan untuk pull image. 'Always' memastikan K8s selalu mencoba pull versi terbaru.
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80 # Port yang diekspos oleh container
