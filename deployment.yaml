@@ -4,10 +4,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   # Nama dari Deployment
-  name: news-website-deployment
+  name: final-project-deployment
   # Label untuk Deployment ini
   labels:
-    app: news-website
+    app: final-project
 spec:
   # Jumlah Pod yang ingin kita jalankan. 3 replika untuk high availability.
   replicas: 3
@@ -20,19 +20,19 @@ spec:
   # Selector untuk menemukan Pod mana yang akan dikelola oleh Deployment ini.
   selector:
     matchLabels:
-      app: news-website
+      app: final-project
   # Template untuk membuat Pod baru.
   template:
     metadata:
       # Label untuk Pod, harus cocok dengan selector di atas.
       labels:
-        app: news-website
+        app: final-project
     spec:
       containers:
-      - name: news-website-container
+      - name: final-project-container
         # Image yang akan digunakan. GANTI dengan nama image Anda.
         # Menggunakan tag 'latest' agar selalu mengambil versi terbaru yang di-push oleh Jenkins.
-        image: yourdockerhubusername/news-website:latest
+        image: eve56/final-project-news:latest
         # Kebijakan untuk pull image. 'Always' memastikan K8s selalu mencoba pull versi terbaru.
         imagePullPolicy: Always
         ports:
