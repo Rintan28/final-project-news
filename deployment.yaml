@@ -37,3 +37,13 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80 # Port yang diekspos oleh container
+        # === TAMBAHKAN BAGIAN INI (volumeMounts) ===
+        volumeMounts:
+        - name: nginx-config-volume
+          mountPath: /etc/nginx/conf.d/default.conf
+          subPath: default.conf
+      # === TAMBAHKAN BAGIAN INI (volumes) ===
+      volumes:
+      - name: nginx-config-volume
+        configMap:
+          name: nginx-config
