@@ -3,7 +3,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: news-website-ingress
+  name: final-project-ingress
   annotations:
     # Anotasi ini spesifik untuk NGINX Ingress Controller
     nginx.ingress.kubernetes.io/rewrite-target: /
@@ -18,7 +18,7 @@ spec:
         backend:
           # Arahkan traffic ke Service yang telah kita buat
           service:
-            name: news-website-service
+            name: final-project-service
             port:
               # Port Service yang dituju
               number: 80
