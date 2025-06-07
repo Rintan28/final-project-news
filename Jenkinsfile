@@ -9,7 +9,7 @@ pipeline {
         // Ganti 'your-dockerhub-username' dengan username Docker Hub Anda
         DOCKER_IMAGE_NAME = "eve56/final-project-news" 
         // ID dari credentials Docker Hub yang sudah Anda simpan di Jenkins
-        DOCKER_HUB_CREDENTIALS = "your-dockerhub-credentials-id"
+        DOCKER_HUB_CREDENTIALS = "docker-hub"
         // Namespace di Kubernetes tempat aplikasi akan di-deploy
         KUBE_NAMESPACE = "final-project-news"
     }
