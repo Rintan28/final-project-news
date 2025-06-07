@@ -10,7 +10,7 @@ spec:
   type: ClusterIP
   # Selector ini akan mencari Pod dengan label 'app: news-website' untuk diarahkan traffic.
   selector:
-    app: final-project
+    app: final-project-deployment
   ports:
   - protocol: TCP
     # Port pada Service itu sendiri
