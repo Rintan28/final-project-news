@@ -36,4 +36,4 @@ spec:
         # Kebijakan untuk pull image. 'Always' memastikan K8s selalu mencoba pull versi terbaru.
         imagePullPolicy: Always
         ports:
-        - containerPort: 3000 # Port yang diekspos oleh container
+        - containerPort: 80 # Port yang diekspos oleh container
