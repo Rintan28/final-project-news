@@ -16,4 +16,4 @@ spec:
     # Port pada Service itu sendiri
     port: 80
     # Port pada container (Pod) yang akan dituju
-    targetPort: 3000
+    targetPort: 80
